@@ -71,11 +71,11 @@ class CaseController extends Controller
     public function actionCreate()
     {
         $model = new Cases();
-        // making userid unique in another table
+        // making userid and customerId unique in another table
         $id=Yii::$app->user->id;
 
-        if ($model->load(Yii::$app->request->post())&& $model->save()){
-          // $model->userId = $id; $model->save();
+        if ($model->load(Yii::$app->request->post())){
+           $model->userId = $id && $model->customerId=$id; $model->save();
             return $this->redirect(['view', 'id' => $model->id]);
         }
 
@@ -83,7 +83,7 @@ class CaseController extends Controller
             'model' => $model,
         ]);
     }
-  
+
 
 
     public function actionUpdate($id)
@@ -112,16 +112,26 @@ class CaseController extends Controller
     {
         $model = new UploadForm();
 
+        // if (Yii::$app->request->isPost) {
+        //     $model->imageFiles = UploadedFile::getInstances($model, 'imageFiles');
+        //     if ($model->upload()) {
+        //         // file is uploaded successfully
+        //         return;
+        //     }
         if (Yii::$app->request->isPost) {
-            $model->imageFiles = UploadedFile::getInstances($model, 'imageFiles');
-            if ($model->upload()) {
-                // file is uploaded successfully
-                return;
-            }
+          //If validation is successful, then we're saving the file:
+       $model->file = UploadedFile::getInstance($model, 'file');
+
+       if ($model->validate()) {
+           $model->file->saveAs('uploads/' . $model->file->baseName . '.' . $model->file->extension);
+       }
+   }
+   return $this->render('upload', ['model' => $model]);
+
         }
 
-        return $this->render('upload', ['model' => $model]);
-    }
+    //     return $this->render('upload', ['model' => $model]);
+    // }
 
     protected function findModel($id)
     {

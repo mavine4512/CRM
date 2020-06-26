@@ -17,7 +17,7 @@ echo Menu::widget([
                 'url' => [
                     '/lead/index'
                 ],
-                'icon' => 'fa fa-dashboard'
+                'icon' => 'fa fa-building'
             ],
 
             [
@@ -51,7 +51,7 @@ echo Menu::widget([
             [
 
                 'label' => 'Cases',
-                'icon' => 'fas fa-user-tie',
+                'icon' => 'fas fa-users-tie',
                 'url' => [
                     '/case/index'
                 ],
@@ -74,9 +74,22 @@ echo Menu::widget([
                 // ]
 
             ],
-
-
-
+            [
+            'label' => 'logout',
+            'icon' => 'fa fa-user-tie',
+            'url' => [
+                '/site/logout'
+            ],
+            'visible' => true,
+              ],
+              [
+              'label' => 'login',
+              'icon' => 'fa fa-user-tie',
+              'url' => [
+                  '/site/login'
+              ],
+              'visible' => true,
+                ],
 
 
 

@@ -9,7 +9,8 @@ use yii\web\UploadedFile;
 
 class Cases extends \yii\db\ActiveRecord
 {
-      public $imageFiles;
+  public $file;
+      //public $imageFiles;
 
     public static function tableName()
     {
@@ -21,7 +22,8 @@ class Cases extends \yii\db\ActiveRecord
         return [
 
             [['status','title','descriptions','date_at'], 'string'],
-         [['imageFiles'], 'file', 'skipOnEmpty' => false, 'extensions' => 'png, jpg', 'maxFiles' => 4],
+         //[['imageFiles'], 'file', 'skipOnEmpty' => false, 'extensions' => 'png, jpg', 'maxFiles' => 4],
+         [['file'], 'file'],
         ];
     }
 
@@ -37,17 +39,18 @@ class Cases extends \yii\db\ActiveRecord
         ];
     }
 
-    public function upload()
-    {
-        if ($this->validate()) {
-            foreach ($this->imageFiles as $file) {
-                $file->saveAs('uploads/' . $file->baseName . '.' . $file->extension);
-            }
-            return true;
-        } else {
-            return false;
-        }
-    }
+    // public function upload()
+    // {
+    //     if ($this->validate()) {
+    //         foreach ($this->imageFiles as $file) {
+    //             $file->saveAs('uploads/' . $file->baseName . '.' . $file->extension);
+    //         }
+    //         return true;
+    //     } else {
+    //         return false;
+    //     }
+    // }
+
 //not in user.
  //    public static function createNew($name,$email,$id) {
  //        $model = new cases();

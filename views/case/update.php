@@ -3,9 +3,9 @@
 use yii\helpers\Html;
 
 
-$this->title = 'Update Case: ' . $model->name;
+$this->title = 'Update Case: ' . $model->title;
 $this->params['breadcrumbs'][] = ['label' => 'Lead', 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->name, 'url' => ['view', 'id' => $model->id]];
+$this->params['breadcrumbs'][] = ['label' => $model->title, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>
 <div class="country-update">

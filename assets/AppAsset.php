@@ -22,12 +22,11 @@ class AppAsset extends AssetBundle
     public $baseUrl = '@web';
     public $css = [
         'css/site.css',
-        'CSS/AdminLTE.min.css',
-        'CSS/AdminLTE.css',
+       'CSS/AdminLTE.min.css',
         'CSS/_all-skins.css',
     ];
     public $js = [
-        // 'js/adminlte.min.js',
+         //'js/adminlte.min.js',
         // 'js/adminlte.js'
     ];
     public $depends = [
