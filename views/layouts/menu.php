@@ -9,9 +9,7 @@ echo Menu::widget([
      ['class' => 'sidebar-menu tree',
      'data-widget'=> 'tree'],
 
-
         'items' => [
-
               [
                 'label' => 'Leads',
                 'url' => [

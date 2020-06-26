@@ -1,14 +1,10 @@
 <?php
 
-/* @var $this \yii\web\View */
-/* @var $content string */
-
 use app\widgets\Alert;
 use app\components\widgets\Flash;
 use app\components\widgets\Title;
 use yii\helpers\Html;
 use yii\widgets\Breadcrumbs;
-// use app\assets\AppAsset;
 use app\assets\AppAsset;
 use yii\helpers\Url;
 AppAsset::register($this);
@@ -87,7 +83,7 @@ $this->title = $companyname;
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <!-- <img src="<?=Url::to ( "@web/dist/img/user1-128x128.jpg" )?>"  class="user-image" alt="User Image"> -->
-              <span class="hidden-xs"><?=$user->name?></span>
+              <span class="hidden-xs"><?=$user->name ?></span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
@@ -124,7 +120,7 @@ $this->title = $companyname;
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-            <span class="hidden-xs"><?=$user->name?></span>
+            <span class="hidden-xs"><?=$user->name ?></span>
            <!-- <img src="<?=Url::to ( "@web/dist/img/user1-128x128.jpg" )?>" class="img-circle" alt="User Image"> -->
         </div>
         <div class="pull-left info">
@@ -135,7 +131,7 @@ $this->title = $companyname;
 
       <!--render the MENU-->
        <?=$this->render ( '/layouts/menu' )?>
-       
+
 
     </section>
     <!-- /.sidebar -->

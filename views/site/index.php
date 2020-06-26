@@ -1,7 +1,7 @@
 <?php
 
 
-$this->title = 'My Yii Application';
+$this->title = 'C.R.M Application';
 ?>
 <div class="site-index">
 
@@ -18,7 +18,6 @@ $this->title = 'My Yii Application';
         <div class="row">
             <div class="col-lg-4">
                 <h2>We give our customer first priority</h2>
-
 
                 <p><a class="btn btn-default" href=('Login', ['/site/login'])>Yii Documentation &raquo;</a></p>
             </div>
